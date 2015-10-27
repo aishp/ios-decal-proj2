@@ -42,14 +42,12 @@ class HangmanViewController: UIViewController {
         }
         
         let alertController = UIAlertController(title: msg, message: desc, preferredStyle: .Alert)
-        
         let newGameAction = UIAlertAction(title: "OK", style: .Default) { (action) in
             self.newGameButtonClick(self)
         }
         alertController.addAction(newGameAction)
         
         self.presentViewController(alertController, animated: true) {
-            // ...
         }
     }
     
@@ -125,6 +123,14 @@ class HangmanViewController: UIViewController {
         if(guessText.text?.characters.count != 1)
         {
             guessText.text = ""
+            let alertController = UIAlertController(title: "Wrong Input", message: "Enter exactly ONE character", preferredStyle: .Alert)
+            let newGameAction = UIAlertAction(title: "OK", style: .Default) { (action) in
+                
+            }
+            alertController.addAction(newGameAction)
+            
+            self.presentViewController(alertController, animated: true) {
+            }
         }
         else
         {
